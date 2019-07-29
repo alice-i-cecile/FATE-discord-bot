@@ -23,16 +23,16 @@ class Game:
     
     @classmethod
     def create(cls, args):
-        if isinstance(args, str): # assume filename, parse file and generate
-            pass # TODO: write this later i guess
-        elif isinstance(args, (list, tuple)):
+        if isinstance(args, str): # assume game name, initiate interactive prompt
+            print("Interactive prompt!") # TODO: write this later i guess
+        elif isinstance(args, list):
             return cls(*args)
         elif isinstance(args, dictionary):
             return cls(**args)
         elif isinstance(args, Game):
             return args # TODO: check if this actually makes a copy- i feel like it doesn't
         else:
-            pass # TODO: interactive prompt here
+            print("Improper usage. Expected string, list, dictionary, or Game")
             
     @classmethod
     def load(cls, directory_name): # load an existing game from a directory 

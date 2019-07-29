@@ -22,12 +22,12 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send('pong!')
     
-    
 # slightly more complicated testing command
 @bot.command() 
 async def identity(ctx, *args):
     await ctx.send('{} arguments: {}'.format(len(args), ', '.join(args)))
 
+# command for creating new objects
 @bot.command(name='new', aliases=['n'])
 async def name(ctx, data, object):
     if (data == "game"):
@@ -40,5 +40,4 @@ async def name(ctx, data, object):
             await ctx.send('That game name is already in use.')
     # TODO: cases for "character" and "scene"
             
-
 bot.run(TOKEN)

@@ -11,7 +11,7 @@ TOKEN = os.getenv('DISCORD_API_TOKEN') # bot token for the discord api
 TIMEOUT = 10 # global timeout for bot prompts
 bot = commands.Bot(command_prefix='!')
 
-games = dict() # TODO: there's probably a better way to do this
+games = dict() # TODO: you could make a custom bot object and have this as an object field instead (which would be a little cleaner)
 
 @bot.event # show yourself!
 async def on_ready():

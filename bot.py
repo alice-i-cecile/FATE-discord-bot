@@ -50,4 +50,15 @@ async def game(ctx, object: str): # TODO proper error handling if object is not 
     else:
         await ctx.send('That game name is already in use.')
             
+# new scene instance
+@new.command()
+async def scene(ctx, object: str):
+    ctx.send("This is where we'd make a scene called {}".format(object))
+    # TODO: check which game is selected, and check that game.scenes for uniqueness
+    
+@new.command()
+async def character(ctx, object: str):
+    ctx.send("This is where we'd make a character called {}".format(object))
+    # TODO: check which game is selected, and check that game.characters for uniqueness
+            
 bot.run(TOKEN)
